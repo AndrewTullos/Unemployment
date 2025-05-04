@@ -37,13 +37,10 @@ jobs:
       - name: Build with Next.js
         run: pnpm next build
 
-      - name: Export for GitHub Pages
-        run: pnpm next export # Ensure this is included
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out # Or your export directory
+          path: ./out # Or your export directory.  This will need to align with your next.config.js
 
   deploy:
     environment:
